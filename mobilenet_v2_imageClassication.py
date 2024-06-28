@@ -27,4 +27,8 @@ res = classifier.predict(goldfish_img)
 
 # Output the prediction result
 predicted_index = np.argmax(res)
-print(predicted_index)
+
+with open("labels.txt", "r") as f:
+    img_labels = f.read().splitlines()
+
+print(img_labels[predicted_index])
